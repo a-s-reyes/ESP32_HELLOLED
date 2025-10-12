@@ -1,12 +1,14 @@
 #include <Arduino.h>
 #include "LEDBlinker.h"
 
-LEDBlinker led(26, 1000);  // GPIO 26, blink every 1000 ms (1 second)
+LEDBlinker led(26, 1000);
 
 void setup() {
-    led.begin();
+    Serial.begin(115200);  
+    led.begin();           
+    Serial.println("ESP32 NodeMCU Red LED Blinker started!");
 }
 
 void loop() {
-    led.update();  // non-blocking LED blinking
+    led.update();
 }
