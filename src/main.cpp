@@ -1,14 +1,18 @@
 #include <Arduino.h>
-#include "LEDBlinker.h"
 
-LEDBlinker led(26, 1000);
+const int ledPin = 26;
 
 void setup() {
-    Serial.begin(115200);  
-    led.begin();           
-    Serial.println("ESP32 NodeMCU Red LED Blinker started!");
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(115200);
+  Serial.println("Starting LED test on GPIO 26");
 }
 
 void loop() {
-    led.update();
+  digitalWrite(ledPin, HIGH);
+  Serial.println("LED ON");
+  delay(500);
+  digitalWrite(ledPin, LOW);
+  Serial.println("LED OFF");
+  delay(500);
 }
