@@ -3,7 +3,6 @@
 #include "driver/ledc.h"
 #include <iostream>
 
-// Simple C++ class to fade an LED
 class FadingLED {
 public:
     FadingLED(int pin, ledc_channel_t channel, int freq = 5000) 
