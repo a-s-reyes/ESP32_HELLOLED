@@ -20,7 +20,6 @@ extern "C" void app_main(void)
     };
     ledc_timer_config(&ledc_timer);
 
-    // Configure the LEDC channel
     ledc_channel_config_t ledc_channel = {
         .gpio_num = ledPin,
         .speed_mode = LEDC_HIGH_SPEED_MODE,
@@ -42,6 +41,6 @@ extern "C" void app_main(void)
             fadeAmount = -fadeAmount;
         }
 
-        vTaskDelay(pdMS_TO_TICKS(50));  // same as Arduino delay(50)
+        vTaskDelay(pdMS_TO_TICKS(50)); 
     }
 }
